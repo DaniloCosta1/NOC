@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2><a href="../index.html">HOME</a></h2>
+    </div>
+    
+    <h1>Principais comandos</h1>
+    <hr>
+
+    <h2>ALCATEL</h2>
+    <p>
+        show port <br>
+        show port desc | match outra ponta <br>
+        show router interface - ver o ip da interface. <br>
+        monitor port - monitorar erros
+    </p>
+    <hr>
+    <h2>CISCO</h2>
+    <p>
+        show int <br>
+        show int desc | include outra ponta <br>
+        show <br>
+        ping xx.xx.xx.xx size 4470 repeat 500 <br>
+        show controllers te0/0/0/40 <br>
+        zerar contadores <br>
+        clear count interface 1/1/1 <br>
+    </p>
+    <hr>
+    <h2>HUAWEI </h2>
+    <p>
+        display interface <br>
+            display interface <br>
+            disp int desc | include ROTEADOR (ver vlan) <br>
+            *RESET* <br>
+            system-view <br>
+            interface gix/x/x <br>
+            shut <br>
+            commit <br>
+            undo shut <br>
+            commit <br>
+            reset counters interface 1/1/1 - zerar contadores <br>
+            disp logbuffer | include 1/1/12 <br>
+            caso caso RJENC91 x RJVRE08_rmd02 <br>
+    </p>
+    <hr>
+    <h2>ZTE</h2>
+    <p>
+        show interface  <br>
+
+        RESET: <br>
+        configure terminal automatic <br>
+        RSKDK04-RMP01(config)#interface xgei-1/1/0/7 <br>
+        RSKDK04-RMP01(config-if-xgei-1/1/0/7)#shut <br>
+        RSKDK04-RMP01(config-if-xgei-1/1/0/7)#no shut <br>
+        RSKDK04-RMP01(config-if-xgei-1/1/0/7)#commit <br>
+        RSKDK04-RMP01(config-if-xgei-1/1/0/7)#exit <br>
+        RSKDK04-RMP01(config)#exit <br>
+        RSKDK04-RMP01# <br>
+    </p>
+    
+</body>
+</html>
