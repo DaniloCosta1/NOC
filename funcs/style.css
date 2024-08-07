@@ -1,11 +1,7 @@
 body{
-    background: rgb(222, 214, 214);
-    background: linear-gradient(153deg, rgb(227, 213, 213) 0%, rgb(217, 203, 203) 100%); ;
+    background-image: -o-linear-gradient(#b92d2a, #ea7c4c);
 }
 
-.content{
-    background-color: #efefef;
-}
 
 .box-frases { 
 
