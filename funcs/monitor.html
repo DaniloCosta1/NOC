@@ -3,21 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MONITOR</title>
 </head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: bisque;
+        height: 80px;
+    }
+
+    header img{
+        height: 100px;
+
+    }
+
+    main{
+        display: flex;
+        justify-content: space-around;
+        background-color: bisque;
+        border: 1px solid black;
+        height: calc(100vh - 80px);
+    }
+    .tools{
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 20px;
+        width: 500px;
+    }
+</style>
+
 <body>
 
-    <div class="header">
-        <h1><a href="../index.html">HOME</a></h1>
-    </div>
+    <header>
+        <div class="logo">
+            <img src="../image/claro.png" alt="">
+        </div>
 
-    <div>
-        <a href="http://10.111.73.15/Citrix/Claro/site/default.aspx" target="_blank" rel="noopener noreferrer"></a>
-    </div>
+        <div class="titulo">
+            <h1>MONITOR</h1>
+        </div>
 
-    <div>
-        <h2>TESTAR TECNOLOGIA NOKIA</h2>
-        <p>
+        <div class="button">
+            <button><a href="../index.html">HOME</a></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="tools">
+            <h2>TESTAR TECNOLOGIA NOKIA</h2>
+        
             NEACT04 <br>
             Login: 72023821 <br>
             Senha: Nokia!123 <br><br>
@@ -37,10 +78,15 @@
             https://nok5login.r05.netact.atl.dcn/authentication/authentication/legaltext.jsp <br><br>
 
             comando
-            ZEEI:BCF=34;<br>
-        </p>
+            ZEEI:BCF=34;
+        
+        <a href="http://10.111.73.15/Citrix/Claro/site/default.aspx" target="_blank" rel="noopener noreferrer"></a>
+        
+        </div>
 
-        <p>
+
+        <!-- _____________________________________ -->
+        <div class="tools">
             <h2>Testes e validação de falhas de NEXTEL</h2> <br>
 
             Pessoal,<br>
@@ -55,9 +101,21 @@
 
             Huawei<br>
             Login:aroc26 <br>
-            Senha: Guilherme#1 <br>
-        </p>
+            Senha: Guilherme#1
+        </div>
 
-    </div>
+        <!-- _____________________________________ -->
+        <div class="tools">
+            <h1>NOKIA</h1>
+            <a href="http://10.111.73.15/Citrix/Claro" target="_blank">CITRIX</a>
+            <h3>USUÁRIO E SENHA</h3>
+            <p>
+                72023821
+                Claro@1000
+            </p>
+        
+        </div>
+    </main>
+
 </body>
 </html>
