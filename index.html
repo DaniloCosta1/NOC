@@ -8,87 +8,30 @@
     <title>NOC</title>
     
 </head>
-
-
-<style>
-    *{padding: 0;
-    margin: 0;
-    }
-
-    /* HEADER */
-    header{
-    padding: 40px 5%;
-    background-color: aqua;
-    }
-
-    .interface{
-    background-color: bisque;
-    border-radius: 10px;
-    }
-
-    header> .interface{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    }
-
-    header a{
-    text-decoration: none;
-    display: inline-block;
-    }
-
-    header nav ul{
-    list-style-type: none;
-    }
-
-    header nav ul{
-    list-style-type: none;
-    }
-
-    header nav ul li{
-    display: inline-block;
-    padding: 0 40px;
-    }
-    .logo img{
-        height: 100px;
-    }
-
-    main{
-        height: calc(100vh - 200px);
-        background-color: beige;
-    }
-
-</style>
-
 <body>
 
-    <header>
-        <div class="interface">
-            
-            <div class="logo">
-                <img src="image/claro.png" alt="">
-            </div>
-
-            <nav class="menu">
-                <ul>
-                    <li><a href="funcs/comands.html">COMANDOS</a></li>
-                    <li><a href="funcs/monitor.html">MONITOR</a></li>
-                    <li><a href="funcs/masks.html">MÁSCARAS</a></li>
-                    <li><a href="funcs/relatorio.html">RELATÓRIOS</a></li>
-                    <li><a href="funcs/senhas.html" >SENHAS</a></li>
-                    
-                </ul>
-            </nav>
-
-            <div class="logo">
-                <h1>NOC N1</h1>
-            </div>
-
-        </div><!--interface-->
+    <header>         
+        <div class="logo">
+            <img src="image/claro.png" alt="">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="funcs/comands.html">COMANDOS</a></li>
+                <li><a href="funcs/monitor.html">MONITOR</a></li>
+                <li><a href="funcs/masks.html">MÁSCARAS</a></li>
+                <li><a href="funcs/relatorio.html">RELATÓRIOS</a></li>
+                <li><a href="funcs/senhas.html" >SENHAS</a></li>  
+            </ul>
+        </nav>
+        <div class="logo">
+            <h1>NOC N1</h1>
+        </div> 
     </header>
 
     <main>
-
+        <div class="painel">
+            <iframe src="http://portalclarobrasil/" frameborder="0"></iframe>
+        </div>
     </main>
 
 </body>

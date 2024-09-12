@@ -1,1 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #DDDD;
+}
 
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 5%;
+    background-color: #DDDD;
+}
+
+header a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+header nav ul{
+list-style-type: none;
+}
+
+header nav ul{
+list-style-type: none;
+}
+
+header nav ul li{
+display: inline-block;
+padding: 0 40px;
+}
+.logo img{
+    height: 100px;
+}
+
+
+/*MAIN*/
+
+main{
+    height: calc(100vh - 200px);
+    background-color: #DDDD;
+}
+
+.painel{
+    border: 1px solid black;
+    height: 600px;
+    margin: 0 5%;
+}
