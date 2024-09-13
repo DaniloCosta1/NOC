@@ -30,15 +30,37 @@
     /*MAIN*/
     main{
         background-color: #DDDD;
-        height: calc(100vh -100px);
+        
     }
+    .botoes{
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid blue;
+        height: 40px;
+        margin: 10px 10%;
+        padding: 5px;
+        
+    }
+
     .painel{
         display: flex;
+        justify-content: center;
         background-color: white;
         border: 1px solid red;
         border-radius: 10px;
         height: 600px;
         margin: 5px 10%;
+    }
+
+    .roteador{
+        border: 1px solid black;
+        height: auto;
+        margin: 05%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
 
 </style>
@@ -55,6 +77,12 @@
         </div>
     </header>
     <main>
+        <div class="botoes">
+            <button id="alcatel" onclick="mostrarAlcatel()">ALCATEL</button>
+            <button>ALCATEL</button>
+            <button>ALCATEL</button>
+            <button>ALCATEL</button>
+        </div>
         <div class="painel" id="painel">
             
         </div>
@@ -65,7 +93,7 @@
         let dados = [
             {
                 marca: "ALCATEL",
-                comandos: "<p>show port<br>show port desc | match outra ponta<br>show router interface - Mostra as interfaces e o ip<br>monitor port - monitorar erros<br>show log log-id 99 | match 1/1/24<br>show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7</p>",
+                comandos: "show port<p><br>show port desc | match outra ponta<br>show router interface - Mostra as interfaces e o ip<br>monitor port - monitorar erros<br>show log log-id 99 | match 1/1/24<br>show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7</p>",
             },
             {
                 marca: "CISCO",
@@ -81,12 +109,25 @@
             }
         ]
 
-        let painel = document.getElementById('painel');
-        painel.innerHTML = `
-            <div class="roteador"></div>
-                <h2>${dados[0].marca}</h2>
-                ${dados[0].comandos}
-            </div>`
+
+
+        let item = document.getElementById('teste')
+
+        function mostrarAlcatel(){
+            let painel = document.getElementById('painel');
+            painel.innerHTML = ;
+            
+
+        }
+
+        // let painel = document.getElementById('painel');
+        //     painel.innerHTML = `
+        //         <div class="roteador">
+        //             <h2>${dados[0].marca}</h2>
+        //             ${dados[0].comandos}
+        //         </div>`;
+        
+        
     </script>
     
 </body>
