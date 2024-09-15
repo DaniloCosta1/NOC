@@ -21,6 +21,7 @@
         align-items: center;
         height: 100px;
         background-color: #DDDD;
+        margin-bottom: 50px;
     }
 
     header img{
@@ -35,7 +36,7 @@
     .botoes{
         display: flex;
         justify-content: space-around;
-        border: 1px solid blue;
+        
         height: 40px;
         margin: 10px 10%;
         padding: 5px;
@@ -46,6 +47,7 @@
         width: 100px;
         background-color: black;
         color: white;
+        border: 1px solid white;
         border-radius: 5px;
     }
 
@@ -53,18 +55,27 @@
         display: flex;
         justify-content: center;
         background-color: white;
-        border: 1px solid red;
+        
         border-radius: 10px;
         height: 600px;
         margin: 5px 10%;
     }
 
     .caixa{
+        background-color: black;
+        color: white;
         display: flex;
         flex-direction: column;
-        
-        
-        margin: 10%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 5px;
+        margin: 2%;
+        padding: 10px;
+        width: 500px;
+    }
+
+    .caixa h3{
+        padding: 15px;
     }
 
 </style>
@@ -84,10 +95,11 @@
         <div class="botoes">
             <button onclick="mostrarAlcatel()">ALCATEL</button>
             <button onclick="mostrarCisco()">CISCO</button>
-            <button>HUAWEI</button>
-            <button>ZTE</button>
+            <button onclick="mostrarHuawei()">HUAWEI</button>
+            <button onclick="mostrarZTE()">ZTE</button>
         </div>
         <div class="painel" id="painel">
+            
             
         </div>
     </main>
@@ -97,19 +109,46 @@
         let dados = [
             {
                 marca: "ALCATEL",
-                comandos: ["show port", "show port desc | match outra ponta","show router interface - Mostra as interfaces e o ip","monitor port - monitorar erros", "show log log-id 99 | match 1/1/24", "show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7"]
+                comandos: `show port<br>
+                show port desc | match outra ponta<br>
+                show router interface - Mostra as interfaces e o ip<br>
+                monitor port - monitorar erros<br>
+                show log log-id 99 | match 1/1/24<br>
+                show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7<br>
+                show system information<br>
+                show chassis det"`
             },
             {
                 marca: "CISCO",
-                comandos: "<p>show int <br>show int desc | include outra ponta<br>ping xx.xx.xx.xx size 4470 repeat 500<br>show controllers te0/0/0/40<br>clear count interface 1/1/1 - Para zerar contadores<br></p>",
+                comandos: "show int <br>show int desc | include outra ponta<br>ping xx.xx.xx.xx size 4470 repeat 500<br>show controllers te0/0/0/40<br> clear count interface 1/1/1 - Para zerar contadores<br> "
             },
             {
                 marca: "HUAWEI",
-                comandos: "<p>display interface <br>disp int desc | include ROTEADOR (ver vlan)<br>*RESET* <br>system-view <br>interface gix/x/x <br>shut <br>commit <br>undo shut <br>commit <br>reset counters interface 1/1/1 - zerar contadores <br>disp logbuffer | include 1/1/12 <br>caso RJENC91 x RJVRE08_rmd02 <br></p>"
+                comandos: `display interface<br>
+                disp int desc | include ROTEADOR (ver vlan)<br><br>
+                <h6>RESET</h6>
+                system-view<br>
+                interface gix/x/x <br>
+                shut <br>
+                commit <br>
+                undo shut <br>
+                commit <br><br>
+                reset counters interface 1/1/1 - zerar contadores <br>
+                disp logbuffer | include 1/1/12 <br>
+                `
             },
             {
                 marca:"ZTE",
-                comandos: "<p>show interface  <br>RESET: <br>configure terminal automatic <br>RSKDK04-RMP01(config)#interface xgei-1/1/0/7 <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#shut <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#no shut <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#commit <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#exit <br> RSKDK04-RMP01(config)#exit <br>RSKDK04-RMP01# <br></p>"
+                comandos: `show interface<br><br>
+                <h6>RESET</h6>
+                configure terminal automatic<br>
+                colocar a interface desejada<br>
+                shut<br>
+                commit<br>
+                no shut<br>
+                commit<br>
+                exit <br> 
+                exit <br>`
             }
         ]
         
@@ -117,10 +156,12 @@
         let painel = document.getElementById('painel');
        
         function mostrarAlcatel(){
+            let res
             painel.innerHTML = `
             <div class="caixa">
                 <h3>${dados[0].marca}</h3>
                 <p>${dados[0].comandos}</p>
+                
             </div>`;
         }
 
@@ -132,10 +173,21 @@
             </div>`;
         }
 
-        
+        function mostrarHuawei(){
+            painel.innerHTML = `
+            <div class="caixa">
+                <h3>${dados[2].marca}</h3>
+                <p>${dados[2].comandos}</p>
+            </div>`;
+        }
 
-
-        
+        function mostrarZTE(){
+            painel.innerHTML = `
+            <div class="caixa">
+                <h3>${dados[3].marca}</h3>
+                <p>${dados[3].comandos}</p>
+            </div>`;
+        }
 
     </script>
     
