@@ -42,6 +42,13 @@
         
     }
 
+    .botoes button{
+        width: 100px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+    }
+
     .painel{
         display: flex;
         justify-content: center;
@@ -52,15 +59,10 @@
         margin: 5px 10%;
     }
 
-    .roteador{
-        border: 1px solid black;
-        height: auto;
-        margin: 05%;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+    .caixa{
+        background-color: blue;
+        color: white;
+        margin: 10%;
     }
 
 </style>
@@ -78,67 +80,22 @@
     </header>
     <main>
         <div class="botoes">
-            <button id="alcatel" onclick="mostrarAlcatel()">ALCATEL</button>
-            <button>ALCATEL</button>
-            <button>ALCATEL</button>
-            <button>ALCATEL</button>
+            <button onclick="mostrarAlcatel()">ALCATEL</button>
+            <button onclick="mostrarCisco()">CISCO</button>
+            <button>HUAWEI</button>
+            <button>ZTE</button>
         </div>
         <div class="painel" id="painel">
             
         </div>
     </main>
 
-<<<<<<< HEAD
-    <h2>ALCATEL</h2>
-    <p>
-        show port <br>
-        show port desc | match outra ponta <br>
-        show router interface - ver o ip da interface. <br>
-        monitor port - monitorar erros <br>
-        show log log-id 99 | match 1/1/24 <br>
-        show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7 <br>
-        show system information<br>
-        show chassis detail<br>
-    </p>
-    <hr>
-    <h2>CISCO</h2>
-    <p>
-        show int <br>
-        show int desc | include outra ponta <br>
-        show <br>
-        ping xx.xx.xx.xx size 4470 repeat 500 <br>
-        show controllers te0/0/0/40 <br>
-        zerar contadores <br>
-        clear count interface 1/1/1 <br>
-    </p>
-    <hr>
-    <h2>HUAWEI </h2>
-    <p>
-        display interface <br>
-            display interface <br>
-            disp int desc | include ROTEADOR (ver vlan) <br>
-            *RESET* <br>
-            system-view <br>
-            interface gix/x/x <br>
-            shut <br>
-            commit <br>
-            undo shut <br>
-            commit <br>
-            reset counters interface 1/1/1 - zerar contadores <br>
-            disp logbuffer | include 1/1/12 <br>
-            caso caso RJENC91 x RJVRE08_rmd02 <br>
-    </p>
-    <hr>
-    <h2>ZTE</h2>
-    <p>
-        show interface  <br>
-=======
 <!-- _________________________ -->
     <script>
         let dados = [
             {
                 marca: "ALCATEL",
-                comandos: "show port<p><br>show port desc | match outra ponta<br>show router interface - Mostra as interfaces e o ip<br>monitor port - monitorar erros<br>show log log-id 99 | match 1/1/24<br>show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7</p>",
+                comandos: ["show port", "show port desc | match outra ponta","show router interface - Mostra as interfaces e o ip","monitor port - monitorar erros", "show log log-id 99 | match 1/1/24", "show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7"]
             },
             {
                 marca: "CISCO",
@@ -153,27 +110,26 @@
                 comandos: "<p>show interface  <br>RESET: <br>configure terminal automatic <br>RSKDK04-RMP01(config)#interface xgei-1/1/0/7 <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#shut <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#no shut <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#commit <br>RSKDK04-RMP01(config-if-xgei-1/1/0/7)#exit <br> RSKDK04-RMP01(config)#exit <br>RSKDK04-RMP01# <br></p>"
             }
         ]
->>>>>>> c74cb2c1c464c6a5d931bb1b509997fd897b1765
+        
 
-
-
-        let item = document.getElementById('teste')
-
+        let painel = document.getElementById('painel');
+       
         function mostrarAlcatel(){
-            let painel = document.getElementById('painel');
-            painel.innerHTML = ;
-            
-
+            painel.innerHTML = `
+            <div class="caixa">
+                <h3>${dados[0].marca}</h3>
+                <p>${dados[0].comandos}</p>
+            </div>`;
         }
 
-        // let painel = document.getElementById('painel');
-        //     painel.innerHTML = `
-        //         <div class="roteador">
-        //             <h2>${dados[0].marca}</h2>
-        //             ${dados[0].comandos}
-        //         </div>`;
-        
-        
+        function mostrarCisco(){
+            painel.innerHTML = `
+            <div class="caixa">
+                <h3>${dados[1].marca}</h3>
+                <p>${dados[1].comandos}</p>
+            </div>`;
+        }
+
     </script>
     
 </body>

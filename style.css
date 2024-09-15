@@ -45,7 +45,13 @@ main{
 }
 
 .painel{
+    display: flex;
+    justify-content: flex-start;
     border: 1px solid black;
-    height: 600px;
+    height: 500px;
     margin: 0 5%;
+}
+.painel iframe{
+    height: 100%;
+    width: 100%;
 }
