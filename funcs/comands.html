@@ -97,6 +97,12 @@
         let painel = document.getElementById('painel');
        
         function mostrarAlcatel(){
+            let res = "";
+            for(comando in alcatel.comandos){
+                res += `
+                <li>${alcatel.comandos[comando]}</li>
+                `
+            }
             painel.innerHTML = `
             <div class="caixa">
                 <div class="mini-head" >
@@ -104,52 +110,73 @@
                 </div>
                 <div class="mini-main">
                     <ul id="lista">
-            `
-            for(comando in alcatel.comandos){
-                document.getElementById('lista') += `<li>${alcatel.comandos[comando]}</li>`
-            }
-            painel.innerHTML += `
-                        
+                        ${res}
                     </ul>
                 </div>
-            </div>
-            `
-            
+            </div>`
         }
 
         function mostrarCisco(){
+            let res = "";
+            for(comando in cisco.comandos){
+                res += `
+                <li>${cisco.comandos[comando]}</li>
+                `
+            }
             painel.innerHTML = `
             <div class="caixa">
-                <h3>${dados[1].marca}</h3>
-                <p>${dados[1].comandos}</p>
-            </div>`;
+                <div class="mini-head" >
+                    <h3>${cisco.marca}</h3>
+                </div>
+                <div class="mini-main">
+                    <ul id="lista">
+                        ${res}
+                    </ul>
+                </div>
+            </div>`
         }
 
         function mostrarHuawei(){
+            let res = "";
+            for(comando in huawei.comandos){
+                res += `
+                <li>${huawei.comandos[comando]}</li>
+                `
+            }
             painel.innerHTML = `
             <div class="caixa">
-                <h3>${dados[2].marca}</h3>
-                <p>${dados[2].comandos}</p>
-            </div>`;
+                <div class="mini-head" >
+                    <h3>${huawei.marca}</h3>
+                </div>
+                <div class="mini-main">
+                    <ul id="lista">
+                        ${res}
+                    </ul>
+                </div>
+            </div>`
         }
+        
 
         function mostrarZTE(){
+            let res = "";
+            for(comando in zte.comandos){
+                res += `
+                <li>${zte.comandos[comando]}</li>
+                `
+            }
             painel.innerHTML = `
             <div class="caixa">
-                <h3>${dados[3].marca}</h3>
-                <p>${dados[3].comandos}</p>
-            </div>`;
+                <div class="mini-head" >
+                    <h3>${zte.marca}</h3>
+                </div>
+                <div class="mini-main">
+                    <ul id="lista">
+                        ${res}
+                    </ul>
+                </div>
+            </div>`
         }
-
-
         
-            // for(comando in alcatel.comandos){
-            //     painel.innerHTML += `
-            //         <li>${alcatel.comandos[comando]}</li>
-            //     `
-            // }
-            // painel.innerHTML += `</div>`
-
     </script>
     
 </body>
