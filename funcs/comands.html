@@ -3,82 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="comandos.css">
     <title>Comandos</title>
 </head>
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    body{
-        background-color: #DDDD;
-    }
-
-    /*HEADER*/
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100px;
-        background-color: #DDDD;
-        margin-bottom: 50px;
-    }
-
-    header img{
-        height: 100px;
-    }
-
-    /*MAIN*/
-    main{
-        background-color: #DDDD;
-        
-    }
-    .botoes{
-        display: flex;
-        justify-content: space-around;
-        
-        height: 40px;
-        margin: 10px 10%;
-        padding: 5px;
-        
-    }
-
-    .botoes button{
-        width: 100px;
-        background-color: black;
-        color: white;
-        border: 1px solid white;
-        border-radius: 5px;
-    }
-
-    .painel{
-        display: flex;
-        justify-content: center;
-        background-color: white;
-        
-        border-radius: 10px;
-        height: 600px;
-        margin: 5px 10%;
-    }
-
-    .caixa{
-        background-color: black;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        border-radius: 5px;
-        margin: 2%;
-        padding: 10px;
-        width: 500px;
-    }
-
-    .caixa h3{
-        padding: 15px;
-    }
-
-</style>
 <body>
     <header>
         <div class="logo">
@@ -100,69 +27,94 @@
         </div>
         <div class="painel" id="painel">
             
-            
         </div>
     </main>
 
 <!-- _________________________ -->
     <script>
-        let dados = [
-            {
-                marca: "ALCATEL",
-                comandos: `show port<br>
-                show port desc | match outra ponta<br>
-                show router interface - Mostra as interfaces e o ip<br>
-                monitor port - monitorar erros<br>
-                show log log-id 99 | match 1/1/24<br>
-                show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7<br>
-                show system information<br>
-                show chassis det"`
-            },
-            {
-                marca: "CISCO",
-                comandos: "show int <br>show int desc | include outra ponta<br>ping xx.xx.xx.xx size 4470 repeat 500<br>show controllers te0/0/0/40<br> clear count interface 1/1/1 - Para zerar contadores<br> "
-            },
-            {
-                marca: "HUAWEI",
-                comandos: `display interface<br>
-                disp int desc | include ROTEADOR (ver vlan)<br><br>
-                <h6>RESET</h6>
-                system-view<br>
-                interface gix/x/x <br>
-                shut <br>
-                commit <br>
-                undo shut <br>
-                commit <br><br>
-                reset counters interface 1/1/1 - zerar contadores <br>
-                disp logbuffer | include 1/1/12 <br>
-                `
-            },
-            {
-                marca:"ZTE",
-                comandos: `show interface<br><br>
-                <h6>RESET</h6>
-                configure terminal automatic<br>
-                colocar a interface desejada<br>
-                shut<br>
-                commit<br>
-                no shut<br>
-                commit<br>
-                exit <br> 
-                exit <br>`
+
+        class Router {
+            constructor(marca){
+                this.marca = marca;
             }
+
+            comandos = new Array();
+
+        }
+
+        const alcatel = new Router("ALCATEL");
+        alcatel.comandos = [
+            "show port", 
+            "show port desc | match outra ponta", 
+            "show router interface - Mostra as interfaces e o ip",
+            "monitor port - monitorar erros",
+            "show log log-id 99 | match 1/1/24",
+            "show log log-id 99 | match TO_MAVRF01-RMP01-1/3/7",
+            "show system information",
+            "show chassis det"
         ]
+
+        const cisco = new Router("CISCO");
+        cisco.comandos = [
+            "show int", 
+            "show int desc | include outra ponta",
+            "ping [colocar o ip] size 4470 repeat 500",
+            "show controllers [interface]",
+            "clear count interface 1/1/1 - Para zerar contadores<br> "
+        ]
+
+        const huawei = new Router('HUAWEI');
+        huawei.comandos = [
+            "display interface",
+            "disp int desc | include ROTEADOR (ver vlan)",
+            "system-view",
+            "interface gix/x/x",
+            "shut",
+            "commit",
+            "undo shut ",
+            "commit",
+            "reset counters interface 1/1/1 - zerar contadores",
+            "disp logbuffer | include 1/1/12"
+        ]
+
+        const zte = new Router('ZTE');
+        zte.comandos = [
+            "show interface",
+            "configure terminal automatic > colocar a interface desejada",
+            "shut",
+            "commit",
+            "no shut",
+            "commit",
+            "exit",
+            "exit"
+        ]
+
+
+
+        let dados = [ alcatel, cisco, huawei, zte]
         
 
         let painel = document.getElementById('painel');
        
         function mostrarAlcatel(){
-            let res
             painel.innerHTML = `
             <div class="caixa">
-                <h3>${dados[0].marca}</h3>
-                <p>${dados[0].comandos}</p>
-                
-            </div>`;
+                <div class="mini-head" >
+                    <h3>${alcatel.marca}</h3>
+                </div>
+                <div class="mini-main">
+                    <ul id="lista">
+            `
+            for(comando in alcatel.comandos){
+                document.getElementById('lista') += `<li>${alcatel.comandos[comando]}</li>`
+            }
+            painel.innerHTML += `
+                        
+                    </ul>
+                </div>
+            </div>
+            `
+            
         }
 
         function mostrarCisco(){
@@ -188,6 +140,15 @@
                 <p>${dados[3].comandos}</p>
             </div>`;
         }
+
+
+        
+            // for(comando in alcatel.comandos){
+            //     painel.innerHTML += `
+            //         <li>${alcatel.comandos[comando]}</li>
+            //     `
+            // }
+            // painel.innerHTML += `</div>`
 
     </script>
     
