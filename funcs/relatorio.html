@@ -9,6 +9,23 @@
 <style>
     header{
         background-color: #DDDD;
+        height: 100px;
+    }
+
+    header img{
+        height: 100px;
+    }
+
+    main{
+        border: 1px solid black;
+        height: calc(100vh - 100px);
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .box{
+        /* border: 1px solid black; */
     }
 </style>
 <body>
@@ -17,60 +34,13 @@
         <a href="../index.html"><img src="../image/claro.png" alt=""></a>
     </header>
 
-    <div>
-        <H2>Links inoperantes GPON</H2>
-        <a href="https://qrip.sa.nocclaro.com.br/index.php" target="_blank" rel="noopener noreferrer">Justificar Links inoperantes GPON</a>
-        <h4>id: ipran senha: ipran</h4>
-    </div>
+    <main>
+        <div class="box">
+            <H2>Links inoperantes GPON</H2>
+            <a href="https://qrip.sa.nocclaro.com.br/index.php" target="_blank" rel="noopener noreferrer">Justificar Links inoperantes GPON</a>
+            <h4>id: ipran senha: ipran</h4>
+        </div>
+    </main>
     
-    <div>
-        <h3>Máscara Relatório N1</h3>
-
-        <textarea name="" id="">
-            Extrato NOC IP N1 MÓVEL | 26/07 - 18hs
-
-            RAL
-            TOTAL: 00
-            >6h: 00
-
-            INC
-            TOTAL:21
-            FALHA IPRAN/IPNODEB: 14
-            TRIAGEM: 00
-            RANSHARING: 7
-            >1h:14
-
-            SIT
-            TOTAL: 03
-            >6h:00
-
-            ARCOS
-            Total: 42
-            >12h: 27
-
-            MEGs
-            N1: 00
-            N2: 00
-            N3: 01
-            CRISE: 00
-
-            Reincidências:
-            IPRAN_CLARO
-            ≤1G: 11
-            >1G - ≤10G: 4
-            >10G - ≤100G: 00
-
-            NET_GPON:
-            ≤1G: 00
-            >1G - ≤10G: 07
-            >10G - ≤100G: 03
-
-
-            *LAST INC RAN SHARING: 26/07/2024 17:06:31
-            OFENSORA VIVO: 16
-            OFENSORA CLARO: 02
-
-        </textarea>
-    </div>
 </body>
 </html>
